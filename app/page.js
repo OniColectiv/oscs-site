@@ -24,6 +24,18 @@ export default function OSCSWebsite() {
     boxShadow: '0 16px 34px rgba(0,0,0,0.25)',
   };
 
+  const inputStyle = {
+    width: '100%',
+    padding: '14px 16px',
+    borderRadius: '14px',
+    border: '1px solid rgba(255,255,255,0.10)',
+    background: 'rgba(255,255,255,0.04)',
+    color: '#ffffff',
+    fontSize: '16px',
+    outline: 'none',
+    boxSizing: 'border-box',
+  };
+
   const darkPill = {
     position: 'absolute',
     borderRadius: '999px',
@@ -91,7 +103,7 @@ export default function OSCSWebsite() {
           </div>
           <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
             <a
-              href="mailto:ambrose.gbagi@theoscs.com"
+              href="#consultation-form"
               style={{
                 textDecoration: 'none',
                 background: 'linear-gradient(135deg, #c79d45 0%, #f0d287 100%)',
@@ -145,7 +157,7 @@ export default function OSCSWebsite() {
 
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '28px' }}>
                 <a
-                  href="mailto:ambrose.gbagi@theoscs.com"
+                  href="#consultation-form"
                   style={{
                     textDecoration: 'none',
                     background: 'linear-gradient(135deg, #c79d45 0%, #f0d287 100%)',
@@ -232,16 +244,46 @@ export default function OSCSWebsite() {
             </div>
           </div>
 
-          <div style={{ ...card, padding: '30px' }}>
+          <div style={{ ...card, padding: '30px' }} id="consultation-form">
             <div style={{ ...darkPill, width: '170px', height: '460px', top: '-140px', left: '50px' }} />
             <div style={{ position: 'relative', zIndex: 2 }}>
-              <div style={sectionTitle}>About OSCS</div>
-              <h2 style={{ fontSize: '42px', margin: '0 0 16px' }}>Real-world supply chain support for real operations.</h2>
-              <p style={{ color: '#e0e5ed', fontSize: '21px', lineHeight: 1.75, margin: 0 }}>
-                OSCS is built to help businesses move beyond guesswork. From inventory optimization and replenishment strategy
-                to warehouse execution and KPI visibility, the focus is practical improvement that protects cash flow, raises
-                accuracy, and supports better decision-making.
+              <div style={sectionTitle}>Request Consultation</div>
+              <h2 style={{ fontSize: '42px', margin: '0 0 16px' }}>Start the conversation.</h2>
+              <p style={{ color: '#e0e5ed', fontSize: '21px', lineHeight: 1.75, margin: '0 0 22px' }}>
+                Tell OSCS what inventory or supply chain challenge you need help solving.
               </p>
+
+              <form
+                action="https://formspree.io/f/xqkrabcd"
+                method="POST"
+                style={{ display: 'grid', gap: '14px' }}
+              >
+                <input type="text" name="name" placeholder="Your Name" required style={inputStyle} />
+                <input type="email" name="email" placeholder="Your Email" required style={inputStyle} />
+                <input type="text" name="company" placeholder="Company" style={inputStyle} />
+                <textarea
+                  name="message"
+                  placeholder="Tell us about your inventory or supply chain challenge"
+                  required
+                  rows={6}
+                  style={{ ...inputStyle, resize: 'vertical', minHeight: '160px' }}
+                />
+                <button
+                  type="submit"
+                  style={{
+                    background: 'linear-gradient(135deg, #c79d45 0%, #f0d287 100%)',
+                    color: '#111826',
+                    padding: '15px 24px',
+                    borderRadius: '999px',
+                    fontWeight: 700,
+                    border: 'none',
+                    cursor: 'pointer',
+                    width: 'fit-content',
+                  }}
+                >
+                  Submit Inquiry
+                </button>
+              </form>
             </div>
           </div>
         </section>
