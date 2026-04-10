@@ -254,7 +254,7 @@ export default function OSCSWebsite() {
               </p>
 
               <form
-                action="https://formspree.io/f/xqkrabcd"
+                action="https://formspree.io/f/xpqogdqk"
                 method="POST"
                 style={{ display: 'grid', gap: '14px' }}
               >
